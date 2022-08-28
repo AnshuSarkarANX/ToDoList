@@ -6,11 +6,32 @@ const port = 2;
 app.get("/", (req, res) => {
   var today = new Date();
   var currentDate = today.getDay();
-  if (currentDate === 6 || currentDate === 0) {
-    res.write("<h1>It's weekend lets   party!</h1>");
-  } else {
-    res.write("<h1>Oh,Work Work Work!!</h1>");
+  var day = "";
+  switch (currentDate) {
+    case 0:
+      day = "Sunday";
+      break;
+    case 1:
+      day = "Monday";
+    case 2:
+      day = "Tuesday";
+      break;
+    case 3:
+      day = "Wednesday";
+      break;
+    case 4:
+      day = "Thursday";
+      break;
+    case 5:
+      day = "Friday";
+      break;
+    case 6:
+      day = "Saturday";
+      break;
+    default:
+      console.log("Error current day is" + currentDate);
   }
+  res.render("list", { KindofDay: day });
 });
 app.listen(port, () => {
   console.log("Server running on port " + port);
