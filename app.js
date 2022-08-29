@@ -6,8 +6,8 @@ app.set("view engine", "ejs");
 const port = 2;
 app.get("/", (req, res) => {
   var today = new Date();
-  var currentDate = today.getDay();
-  var day = "";
+  const options = { weekday: "long" };
+  var day = today.toLocaleDateString(undefined, options);
   res.render("list", { KindofDay: day });
 });
 app.listen(port, () => {
