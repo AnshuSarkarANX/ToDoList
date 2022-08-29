@@ -12,7 +12,7 @@ app.get("/", (req, res) => {
   var today = new Date();
   const options = { weekday: "long" };
   var day = today.toLocaleDateString(undefined, options);
-  res.render("list", { KindofDay: day, listItem: items });
+  res.render("list", { KindofDay: day, listItems: items });
 });
 app.post("/", (req, res) => {
   var work = req.body.work;
