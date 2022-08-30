@@ -8,17 +8,22 @@
     <title>ToDoList</title>
 </head>
 <body>
-
-<h1><%= KindofDay %></h1>
-    <li>Check email</li> 
+<div class="box" id="heading">
+    <h1><%= KindofDay %></h1>
+</div>
+<div class="box" >
     <% for(var i=0;i<listItems.length;i++){%> 
-        <li><%= listItems[i] %> </li>
+        <div class="item">
+            <input type="checkbox">
+        <p><%= listItems[i] %> </p>
+        </div>
     <% } %>
     
-    <form action="/" method="post">
-        <input type="text" name="work" placeholder="add another work" id="">
-        <button type="submit">Ok</button>
+    <form class="item" action="/" method="post">
+        <input type="text" name="work" placeholder="add another work" autocomplete="off">
+        <button type="submit">+</button>
     </form>
-</ul>
+</div>
+
 </body>
 </html>
