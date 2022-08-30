@@ -8,11 +8,11 @@
 </head>
 <body>
 <h1><%= KindofDay %>'s list</h1>
-<ul>
     <li>Check email</li> 
-    <%for(var i=0;i<listItems.length;i++){ %>
-        <li><%=listItems[i] %> </li>
-    <% } %> 
+    <% for(var i=0;i<listItems.length;i++){%> 
+        <li><%= listItems[i] %> </li>
+    <% } %>
+    
     <form action="/" method="post">
         <input type="text" name="work" placeholder="add another work" id="">
         <button type="submit">Ok</button>
