@@ -4,7 +4,7 @@ const { application } = require("express");
 const bodyParser = require("body-parser");
 const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
-var items = [];
+var items = ["Check emails"];
 app.set("view engine", "ejs");
 app.use(express.static("public"));
 
