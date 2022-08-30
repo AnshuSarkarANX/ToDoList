@@ -6,6 +6,7 @@ const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 var items = [];
 app.set("view engine", "ejs");
+app.set(express.static("public"));
 
 const port = 2;
 app.get("/", (req, res) => {
