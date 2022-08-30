@@ -11,7 +11,7 @@ app.use(express.static("public"));
 const port = 2;
 app.get("/", (req, res) => {
   var today = new Date();
-  const options = { weekday: "long" };
+  const options = { weekday: "long", day: "numeric", month: "long" };
   var day = today.toLocaleDateString(undefined, options);
   res.render("list", { KindofDay: day, listItems: items });
 });
