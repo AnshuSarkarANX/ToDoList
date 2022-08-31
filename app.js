@@ -5,6 +5,7 @@ const bodyParser = require("body-parser");
 const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 var items = ["Check emails"];
+var workItems = [];
 app.set("view engine", "ejs");
 app.use(express.static("public"));
 
@@ -15,11 +16,19 @@ app.get("/", (req, res) => {
   var day = today.toLocaleDateString(undefined, options);
   res.render("list", { listTitle: day, listItems: items });
 });
-app.get("/work", (req, res) => {});
+app.get("/work", (req, res) => {
+  res.render("list", { listTitle: "Work", listItems: workItems });
+});
 app.post("/", (req, res) => {
-  var work = req.body.work;
-  items.push(work);
-  res.redirect("/");
+  if (req.body.list === "Work") {
+    var workItem = req.body.work;
+    workItems.push(workItem);
+    res.redirect("/work");
+  } else {
+    var work = req.body.work;
+    items.push(work);
+    res.redirect("/");
+  }
 });
 app.listen(port, () => {
   console.log("Server running on port " + port);
