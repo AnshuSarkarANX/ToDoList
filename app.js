@@ -13,8 +13,9 @@ app.get("/", (req, res) => {
   var today = new Date();
   const options = { weekday: "long", day: "numeric", month: "long" };
   var day = today.toLocaleDateString(undefined, options);
-  res.render("list", { KindofDay: day, listItems: items });
+  res.render("list", { listTitle: day, listItems: items });
 });
+app.get("/work", (req, res) => {});
 app.post("/", (req, res) => {
   var work = req.body.work;
   items.push(work);
