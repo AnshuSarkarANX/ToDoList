@@ -1,6 +1,6 @@
 const express = require("express");
 const body = require("body-parser");
-const date = require(__dirname + "/date.js");
+const calender = require(__dirname + "/calender.js");
 const app = express();
 app.use(body.urlencoded({ extended: true }));
 var items = ["Check emails"];
@@ -10,7 +10,7 @@ app.use(express.static("public"));
 
 const port = 2;
 app.get("/", (req, res) => {
-  var day = date();
+  var day = calender.Date();
   res.render("list", { listTitle: day, listItems: items });
 });
 app.get("/work", (req, res) => {
