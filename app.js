@@ -6,7 +6,7 @@ const calender = require(__dirname + "/Local/calender.js");
 const app = express();
 app.use(body.urlencoded({ extended: true }));
 // arrays
-var items = ["Check emails"];
+const items = ["Check emails"];
 var workItems = [];
 // for ejs folder
 app.set("view engine", "ejs");
