@@ -7,7 +7,7 @@ const app = express();
 app.use(body.urlencoded({ extended: true }));
 // arrays
 const items = ["Check emails"];
-var workItems = [];
+const workItems = [];
 // for ejs folder
 app.set("view engine", "ejs");
 // for public folder to access css files
