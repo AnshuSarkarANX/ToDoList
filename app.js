@@ -26,11 +26,11 @@ app.get("/work", (req, res) => {
 app.post("/", (req, res) => {
   // logic for getting work items
   if (req.body.list === "Work") {
-    var workItem = req.body.work;
+    const workItem = req.body.work;
     workItems.push(workItem);
     res.redirect("/work");
   } else {
-    var work = req.body.work;
+    const work = req.body.work;
     items.push(work);
     res.redirect("/");
   }
