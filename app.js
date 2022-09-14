@@ -16,7 +16,7 @@ app.use(express.static("public"));
 const port = 2;
 // home page
 app.get("/", (req, res) => {
-  var day = calender.Date();
+  const day = calender.Date();
   res.render("list", { listTitle: day, listItems: items });
 });
 // for /work page
