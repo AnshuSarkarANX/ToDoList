@@ -35,6 +35,7 @@ app.post("/", (req, res) => {
     res.redirect("/");
   }
 });
+// code for listening on localhost:2
 app.listen(port, () => {
   console.log("Server running on port " + port);
 });
